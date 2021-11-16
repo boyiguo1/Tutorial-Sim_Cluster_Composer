@@ -2,7 +2,6 @@
 #SBATCH --share
 #SBATCH --partition=express
 #
-# Set your error and output files
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
@@ -18,7 +17,7 @@
 # TODO: Replace with your Email address
 #SBATCH --mail-user=you_email@address.com
 
-# module list
+# Module list
 # TODO: Change to your prefered R version
 module load R/3.6.2-foss-2018a-X11-20180131-bare
 
