@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# R Simulation Study Automation
+# Automating R Simulation Studies
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -21,23 +21,62 @@ Slurm *job array* feature using the flag
 
 ## Toy Example: Central Limit Theorem
 
+We use a simulation study of the central limit theorem (CLT) to
+demonstrate the pipeline. In this example, we simulate random samples
+(*X*<sub>1</sub>, …, *X*<sub>*n*</sub>) of size
+*n* ∈ 5, 10, 50, 100, 500, 1000, 5000, 10000 from independent and
+identical Poisson distribution with mean *λ* = 3, and calculate the
+sample mean *X̄* of the *n* random sample. This process is repeated for
+1000 times to generate a heuristic distribution of *X̄*. We hypothesize
+this heuristic distribution should closely match to a normal
+distribution of mean 3 and variance 3, particularly when *n* grows
+larger. To examine our hypothesis, we record the mean, median, variance,
+kurtosis and skewness of the heuristic distribution. This concludes as
+one replication, and we have *n*<sub>it</sub> = 1000 replications for
+each setting of *n*.
+
+To put the simulation study in the context of the pipeline, we have
+
+-   one simulation parameter: the size of random samples *n*  
+-   the data generating process: 1000 samples of
+    (*X*<sub>1</sub>, …, *X*<sub>*n*</sub>) where
+    *X*<sub>*i*</sub> ∼ Poisson(*λ* = 3) i.i.d. for *i* = 1, …, *n*  
+-   the model and its output: the heuristic distribution of *X̄* and its
+    mean, median, variance, kurtosis and skewness  
+-   the number of replications for each simulation setting:
+    *n*<sub>it</sub> = 1000
+
 ### Getting Started
 
 1.  Copy three code files (including `start_sim.R`,
     `slurm_job_config.job`, `main.R`) in the folder `Code-copy_me` to
     your working directory on the cluster.
+
 2.  Replace the code section \[TODO: insert permanent link here\] in the
     `main.R` file with you simulation code
-3.  Replace the directory path with
 
--   Search *TODO: Replace path here*
--   We recommend to use [absolute path instead of relative
-    path](https://www.linux.com/training-tutorials/absolute-path-vs-relative-path-linuxunix/)
-    in your files
+3.  Replace the directory paths with your preferred path
 
-1.  Source the `start_sim.R` in an R console or run
-    `R CMD BATCH start_sim.R` in the command line in the head node of
-    the cluster
+    -   [Global
+        search](https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code)
+        the phrase `TODO: Replace path here` in the code files
+    -   We recommend to use [absolute path instead of relative
+        path](https://www.linux.com/training-tutorials/absolute-path-vs-relative-path-linuxunix/)
+        in your files
+
+4.  In the log-in node of the cluster, source the file `start_sim.R` in
+    an R console or run `R CMD BATCH start_sim.R` in the command line
+    within your working directory, i.e. the directory that contains the
+    three code files
+
+    -   You still need to load the R module before running the R script
+        in your preferred way.
+
+5.  Wait to see the simulation output in the designated storage
+    folder/directory
+
+    -   If there was something wrong with the simulation, go to your log
+        folder/directory
 
 ## Techinical Explaination
 
@@ -53,8 +92,13 @@ Slurm *job array* feature using the flag
 ## Remarks
 
 -   Technique
+
 -   Simulation strategies
+
 -   Alternatives
+
     -   Use `Targets`
+
 -   Advancement
+
     -   Change parameters of the jobs
