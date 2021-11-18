@@ -59,6 +59,6 @@ job_name <- Sys.getenv('SLURM_JOB_NAME')
 # Recommendation: to save the results in individual rds files
 saveRDS(ret,
         # TODO: Replace path here
-        paste0("/Change/To/Absolute/Path/Of/Your/Storage/", job_name,"/it_",it,".rds"))
+        paste0("/Change/To/Absolute/Path/Of/Your/Storage/Res/", job_name,"/it_",it,".rds"))
 
 
