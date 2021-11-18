@@ -25,8 +25,9 @@ module load R/3.6.2-foss-2018a-X11-20180131-bare
 # Create a directory to store your log files
 # Import to debuging
 ## TODO: Replace path here
-logPath=/Change/To/Absolute/Path/Of/Your/Storage/$SLURM_JOB_NAME/
-mkdir -p $logPath
+resPath=/Change/To/Absolute/Path/Of/Your/Storage/Res/$SLURM_JOB_NAME/
+logPath=/Change/To/Absolute/Path/Of/Your/Storage/Log/$SLURM_JOB_NAME/
+mkdir -p $logPath $resPath
 
 # Run simulation with simulation parameters using R batch --args flag
 ## TODO: Replace with your simulation parameters
