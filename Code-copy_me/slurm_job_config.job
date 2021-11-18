@@ -30,4 +30,6 @@ mkdir -p $logPath
 
 # Run simulation with simulation parameters using R batch --args flag
 ## TODO: Replace with your simulation parameters
-R CMD BATCH  --vanilla "--args n_train=$ntrain n_test=$ntest p=$p dis=$dist" /home/boyiguo1/bgam/Code/Main.R $logPath${SLURM_ARRAY_TASK_ID}.out
+###      The $ sign helps to fetch the simulation parameters passed from start_sim.R
+## TODO: Replace path here
+R CMD BATCH  --vanilla "--args n=$n" /Change/To/Absolute/Path/Of/Job/File/main.R $logPath${SLURM_ARRAY_TASK_ID}.out

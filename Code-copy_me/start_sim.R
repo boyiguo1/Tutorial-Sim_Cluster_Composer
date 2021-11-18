@@ -1,27 +1,25 @@
 library(dplyr)
 
+
+# Simulation Parameters ---------------------------------------------------
 sim_prmt <- expand.grid(
-  p = c(4, 10, 50, 100, 200),
-  n_train = c(500),
-  n_test = c(10000),
-  dis = c("gaussian", "binomial")#, "poisson")
-) %>%
-  data.frame()
+  n = c(5, 10, 50, 100, 500, 1000, 5000, 10000)
+)
 
-# A wrapper function to set up each job
+
+
+
+
+# Helper Function for Setting Up Job --------------------------------------
 start.sim <- function(
-  p,
-  n_train, n_test, dis
+  n
+  # TODO: add sim_prmt column names as arguments
 ) {
-
-  p.name <- paste0("p_", p)
-  dis.name <- paste0("dis_", dis)
-
-  job.name <- paste("bgam_main_", dis.name, p.name,
-                    sep="-")
+  #Compose job name
+  job.name <- paste("CLT_sim_n", n)
 
   # NOTE:
-  ## Job name has to be unique for each of your simulation setting
+  ## Job name has to be unique for each of your simulation settings
   ## DO NOT USE GENERIC JOB NAME FOR CONVENIENCE
   job.flag <- paste0("--job-name=",job.name)
 
@@ -29,19 +27,26 @@ start.sim <- function(
 
   out.flag <- paste0("--output=",job.name,".out")
 
-  # Pass simulation parameters to jobs
-  arg.flag <- paste0("--export=ntrain=", n_train, ",",
-                     "ntest=", n_test, ",",
-                     "p=", p,",",
-                     "dist=", dis )
+  # Pass simulation parameters to jobs using export flag
+  ## TODO: add other sim_prmt in this flag if necessary
+  arg.flag <- paste0("--export=n=", n)
 
   # Create Jobs
   system(
-    paste("sbatch", job.flag, err.flag, out.flag, arg.flag,".job")
+    ## TODO: Replace path here
+    paste("sbatch", job.flag, err.flag, out.flag, arg.flag,
+          "/Change/To/Absolute/Path/Of/Job/File/slurm_job_config.job")
   )
 }
 
 
+
+
+
+# Set up job for all simulation settings ----------------------------------
 for(i in 1:NROW(sim_prmt)){
   do.call(start.sim, sim_prmt[i,])
 }
+
+
+
