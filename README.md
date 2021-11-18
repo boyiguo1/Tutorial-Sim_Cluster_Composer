@@ -79,25 +79,26 @@ To put the simulation study in the context of the pipeline, we have
 
 ## Techinical Explaination
 
+\[TODO: add flow chart here\]
+
 ## Questions/Discussion Board
 
-## Strategies
+\[TODO: add link to the repo issue page + template\]
 
--   Modulelize your code
+## Related Resources
+
+### Simulation Strategies
+
+-   Modulize your code
 -   Test out your code before deployment on the cluster
 -   Choose the correct partition
 -   Raw Data Vs Simulation Results
+-   Trade-offs: Change parameters of the jobs
 
-## Remarks
+### Other Tools
 
--   Technique
+-   Use `Targets`
 
--   Simulation strategies
+### Design Your Simulation Study
 
--   Alternatives
-
-    -   Use `Targets`
-
--   Advancement
-
-    -   Change parameters of the jobs
+-   Add Morris, White, Crowther (2017) Stat in Med Paper
