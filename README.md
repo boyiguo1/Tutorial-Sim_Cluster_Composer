@@ -24,7 +24,7 @@ Slurm *job array* feature using the flag
 We use a simulation study of the central limit theorem (CLT) to
 demonstrate the pipeline. In this example, we simulate random samples
 (*X*<sub>1</sub>, …, *X*<sub>*n*</sub>) of size
-*n* ∈ 5, 10, 50, 100, 500, 1000, 5000, 10000 from independent and
+*n* ∈ {5, 10, 50, 100, 500, 1000, 5000, 10000} from independent and
 identical Poisson distribution with mean *λ* = 3, and calculate the
 sample mean *X̄* of the *n* random sample. This process is repeated for
 100000 times to generate a heuristic distribution of *X̄*. We hypothesize
@@ -76,6 +76,16 @@ To put the simulation study in the context of the pipeline, we have
 
     -   If there was something wrong with the simulation, go to your log
         folder/directory
+
+### Homework
+
+As a practice that helps you familiarize with the pipeline, please
+consider to improve the current simulation study by - considering more
+simulation parameters, e.g. more options of the sample distribution
+*X*<sub>*n*</sub> - replicating the simulation study for
+*n*<sub>it</sub> ∈ {100, 10000} times per each simulation setting -
+summarizing the heuristic distribution of *X̄* differently,
+e.g. kurtosis, skewness, or normality test
 
 ## Techinical Explaination
 
