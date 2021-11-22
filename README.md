@@ -80,12 +80,14 @@ To put the simulation study in the context of the pipeline, we have
 ### Homework
 
 As a practice that helps you familiarize with the pipeline, please
-consider to improve the current simulation study by - considering more
-simulation parameters, e.g. more options of the sample distribution
-*X*<sub>*n*</sub> - replicating the simulation study for
-*n*<sub>it</sub> ∈ {100, 10000} times per each simulation setting -
-summarizing the heuristic distribution of *X̄* differently,
-e.g. kurtosis, skewness, or normality test
+consider to improve the current simulation study by
+
+-   considering more simulation parameters, e.g. more options of the
+    sample distribution *X*<sub>*n*</sub>
+-   replicating the simulation study for *n*<sub>it</sub> ∈ {100, 10000}
+    times per each simulation setting
+-   summarizing the heuristic distribution of *X̄* differently,
+    e.g. kurtosis, skewness, or normality test
 
 ## Techinical Explaination
 
