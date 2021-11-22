@@ -63,7 +63,7 @@ As a practice that helps you familiarize with the pipeline, please consider to i
 
 
 ## Questions/Discussion Board
-[TODO: add link to the repo issue page + template]
+Please feel free to ask us questions or report bugs via [Issues](https://github.com/boyiguo1/Tutorial-Sim_Cluster_Composer/issues) tab of the repository. We advise you to search if a similar question or bug was previously issued before filing your own. You can search and filter by using the search box or the labels. Two templates are provided to report, where you need to describe your problem and provide a minimal reproducible example.
 
     
 ## Related Resources
