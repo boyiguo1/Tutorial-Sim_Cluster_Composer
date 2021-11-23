@@ -59,7 +59,7 @@ As a practice that helps you familiarize with the pipeline, please consider to i
 - summarizing the empirical distribution of $\bar{X}$ differently, e.g. kurtosis, skewness, or normality test
 
 ## Techinical Explaination
-[TODO: add flow chart here]
+The pipeline is built upon the premise that running each repetition parallel is more efficient than runing all repetitions within a giant loop that some of them with parallel capacity. This is general true when xxx. [TODO: add flow chart here]
 
 
 ## Questions/Discussion Board
