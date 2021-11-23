@@ -27,11 +27,11 @@ demonstrate the pipeline. In this example, we simulate random samples
 *n* ∈ {5, 10, 50, 100, 500, 1000, 5000, 10000} from independent and
 identical Poisson distribution with mean *λ* = 3, and calculate the
 sample mean *X̄* of the *n* random sample. This process is repeated for
-100000 times to generate a heuristic distribution of *X̄*. We hypothesize
-this heuristic distribution should closely match to a normal
+100000 times to generate a empirical distribution of *X̄*. We hypothesize
+this empirical distribution should closely match to a normal
 distribution of mean 3 and variance 3, particularly when *n* grows
 larger. To examine our hypothesis, we record the mean, median, variance
-of the heuristic distribution. This concludes as one replication, and we
+of the empirical distribution. This concludes as one replication, and we
 have *n*<sub>it</sub> = 1000 replications for each setting of *n*.
 
 To put the simulation study in the context of the pipeline, we have
@@ -40,7 +40,7 @@ To put the simulation study in the context of the pipeline, we have
 -   the data generating process: 1000 samples of
     (*X*<sub>1</sub>, …, *X*<sub>*n*</sub>) where
     *X*<sub>*i*</sub> ∼ Poisson(*λ* = 3) i.i.d. for *i* = 1, …, *n*  
--   the model and its output: the heuristic distribution of *X̄* and its
+-   the model and its output: the empirical distribution of *X̄* and its
     mean, median, variance
 -   the number of replications for each simulation setting:
     *n*<sub>it</sub> = 1000
@@ -86,7 +86,7 @@ consider to improve the current simulation study by
     sample distribution *X*<sub>*n*</sub>
 -   replicating the simulation study for *n*<sub>it</sub> ∈ {100, 10000}
     times per each simulation setting
--   summarizing the heuristic distribution of *X̄* differently,
+-   summarizing the empirical distribution of *X̄* differently,
     e.g. kurtosis, skewness, or normality test
 
 ## Techinical Explaination
