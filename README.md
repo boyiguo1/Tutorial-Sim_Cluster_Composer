@@ -110,12 +110,9 @@ and further to the R code `main.R` that contains the data generating
 process. In other words, we can use the same job script and data
 generating process with different sets of simulation parameters.
 
-
 | *Process of Setting up Cluster Jobs using R* |
-|:--:|
-|![](figures/chart_01.drawio.png)|
-
-
+|:--------------------------------------------:|
+|       ![](figures/chart_01.drawio.png)       |
 
 ## Questions/Discussion Board
 
