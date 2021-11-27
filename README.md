@@ -89,7 +89,7 @@ consider to improve the current simulation study by
 -   summarizing the empirical distribution of *X̄* differently,
     e.g. kurtosis, skewness, or normality test
 
-## Techinical Explaination
+## Technical Explaination
 
 The pipeline is built upon the premise that running each repetition via
 different jobs (i.e. 1000 jobs where each job requires a single core on
@@ -110,7 +110,7 @@ and further to the R code `main.R` that contains the data generating
 process. In other words, we can use the same job script and data
 generating process with different sets of simulation parameters.
 
-\[TODO: add flow chart here\]
+![](figures/flowchart01.drawio.png)
 
 ## Questions/Discussion Board
 
