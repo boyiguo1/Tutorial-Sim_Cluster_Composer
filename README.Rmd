@@ -64,7 +64,8 @@ The pipeline is built upon the premise that running each repetition via differen
 The main idea of the pipeline is to create an R interface `sim_start.R` where you can set up parameters of the simulation study. Then, the R interface will help to create job arrays via `sys.call`. Each simulation setting has a job array that contains independent replications of preferred size. The parameters that are necessary to create a simulation setting is passed to the job scheduling script `slurm_job_config.job` and further to the R code `main.R` that contains the data generating process. In other words, we can use the same job script and data generating process with different sets of simulation parameters.
 
 
-![Process of Setting up Jobs with R to Run on Cluster](figures/chart_01.drawio.png)
+![](figures/chart_01.drawio.png)
+*Process of Setting up Jobs with R to Run on Cluster*
 
 
 ## Questions/Discussion Board
