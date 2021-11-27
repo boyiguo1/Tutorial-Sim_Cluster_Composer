@@ -1,6 +1,4 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # Automating R Simulation Studies
 
 <!-- badges: start -->
@@ -128,16 +126,81 @@ reproducible example.
 
 ### Simulation Strategies
 
--   Modulize your code
--   Test out your code before deployment on the cluster
--   Choose the correct partition
--   Raw Data Vs Simulation Results
--   Trade-offs: Change parameters of the jobs
+-   Modularize your code
+
+    *When you writing your simulation code, try to think how to best
+    modularize your code sections. Each module can be used at multiple
+    locations/simulation settings without writing them repetitively. In
+    addition, Modularization also helps when you are debugging. Instead
+    of going through a long script, you can test out each module to see
+    where the bug is. To start with, you can pack you code into
+    functions, where each function have an dedicated purpose. For
+    example, you can write a function for data generating process, a
+    function for model training, and a function for model testing.*
+
+-   Test out your code before deploying on the cluster
+
+    *It is hardly possible that anyone can set up their simulation study
+    correctly the first time. Hence, it is good to test the code before
+    deployment on the cluster. It will save yoursolve from reading
+    weired error message and cleaning up log files. The best practice is
+    to start small, for example run one of the simulation settings with
+    small number of repetitions. If it works, proceed to scale up the
+    simulation study.*
+
+-   Choose the correct cluster partition
+
+    *The cluster partition has a direct effect on how many jobs you can
+    run at the same time, and hence decided how fast you can get the
+    study results. It requires optimization based on your own needs if
+    you prefer to getting your result back as soon as possible. The
+    shorter time each of your simulation ran, the more job you can run
+    parallel. However, if you didn’t have enough computation time for
+    your job, you will simply lost the efforts you had.*
+
+-   Save Simulated Data Vs Save Simulation Results
+
+    *These are the two strategies for the whole simulation study (data
+    generation + analysis with models). Each has its own merit. Saving
+    simulated data gives you flexibility to conduct granular
+    investigation, say each replication which is helpful when debugging.
+    However, it is more laborious to finish the whole simulation study,
+    as another process to conduct the acutal analysis is required. In
+    addition, it requires more storage room for the generated data. In
+    contrast, having on integrated process that contains both data
+    generation and analysis requires less effort to set up and manage.
+    However, it loses some of the transparency to investigate
+    case-by-case. (Not impossible, use the saved seed number/iteration
+    number)*
 
 ### Other Tools
 
--   Use `Targets`
+-   Another tool to integrate your simulation study systematically is
+    the R workflow package
+    [`targets`](https://docs.ropensci.org/targets/). It provides support
+    for [high-performance
+    computing](https://books.ropensci.org/targets/hpc.html) and [cloud
+    integration](https://books.ropensci.org/targets/cloud.html).
+    However, it takes *some* effort to set up, particularly if you don’t
+    have admin role or great IT support.
 
-### Design Your Simulation Study
+### Careful Design of Your Simulation Study
 
--   Add Morris, White, Crowther (2017) Stat in Med Paper
+-   Morris, White, and Crowther (2019) developed ADEMP framework for
+    planning simulation studies. The authors gave concrete examples and
+    guidelines on what to consider in each step of the framework.
+
+#### Reference
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Morris2019" class="csl-entry">
+
+Morris, Tim P, Ian R White, and Michael J Crowther. 2019. “<span
+class="nocase">Using simulation studies to evaluate statistical
+methods</span>.” *Statistics in Medicine*, January.
+<https://doi.org/10.1002/sim.8086>.
+
+</div>
+
+</div>
