@@ -58,13 +58,13 @@ As a practice that helps you familiarize with the pipeline, please consider to i
 - replicating the simulation study for $n_\text{it} \in \{100, 10000\}$ times per each simulation setting
 - summarizing the empirical distribution of $\bar{X}$ differently, e.g. kurtosis, skewness, or normality test
 
-## Techinical Explaination
+## Technical Explanation
 The pipeline is built upon the premise that running each repetition via different jobs (i.e. 1000 jobs where each job requires a single core on a node) is more efficient than running all repetitions within a giant loop that has some parallel capacity (i.e. 1 job that requires 1 node with 44 CPUs and 2 days of computation time). This is generally true when you can create more jobs (without long queuing time) than the number of cores that available for use. In addition, it takes a lot longer time to request a single node with a great number of CPUs.
 
 The main idea of the pipeline is to create an R interface `sim_start.R` where you can set up parameters of the simulation study. Then, the R interface will help to create job arrays via `sys.call`. Each simulation setting has a job array that contains independent replications of preferred size. The parameters that are necessary to create a simulation setting is passed to the job scheduling script `slurm_job_config.job` and further to the R code `main.R` that contains the data generating process. In other words, we can use the same job script and data generating process with different sets of simulation parameters.
 
 
-[TODO: add flow chart here]
+![Process of Setting up Jobs with R to Run on Cluster](figures/chart_01.drawio.png)
 
 
 ## Questions/Discussion Board
