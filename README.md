@@ -89,7 +89,7 @@ consider to improve the current simulation study by
 -   summarizing the empirical distribution of *X̄* differently,
     e.g. kurtosis, skewness, or normality test
 
-## Technical Explaination
+## Technical Explanation
 
 The pipeline is built upon the premise that running each repetition via
 different jobs (i.e. 1000 jobs where each job requires a single core on
